@@ -1,29 +1,29 @@
 /* || Global Styles */
 * {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
 
-body {
-font-family: Arial, sans-serif;
-line-height: 1.6;
-background-color: #f4f4f4;
-padding: 20px;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.card {
-    background: #ffffff;
+    body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
     padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .card {
+        background: #ffffff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 /* || Typography */
 h1 {
 Text-align: center;
@@ -87,7 +87,14 @@ background-color: #005fa3;
 .dark-mode {
     background-color:#222;
     color:white;
-}
+    .card {
+        background: #4d4b4b;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgb(245, 243, 241);
+    }
+}   
 
 .hidden {
 display:none;
