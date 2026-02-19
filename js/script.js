@@ -15,7 +15,14 @@ submitBtn.addEventListener("click",function(event){
 const themeToggle = document.getElementById("themeToggle");
 themeToggle.addEventListener("click",function(){
     document.body.classList.toggle("dark-mode");
+    
+    if (document.body.classList.contains("dark-mode")) {
+        themeToggle.textContent = "Toggle Light Mode";
+    } else {
+        themeToggle.textContent = "Toggle Dark Mode";
+    }
 });
+
 
 
 const toggleSkills = document.getElementById("toggleSkills");
@@ -23,3 +30,5 @@ const skillsSection = document.getElementById("skillsSection");
 toggleSkills.addEventListener("click",function(){
     skillsSection.classList.toggle("hidden");
 });
+
+
