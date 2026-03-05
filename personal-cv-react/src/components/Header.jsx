@@ -1,10 +1,12 @@
+import profilePhoto from '../assets/profile.jpg';
+
 function Header() {
   return (
     <div className="container">
         <section className="card">  
         <header style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <img 
-            src="/image/profile.jpg" 
+            src={profilePhoto}
             alt="Jayson Rey Digang profile photo" 
             width="200" 
             height="200" 
