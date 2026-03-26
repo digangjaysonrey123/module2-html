@@ -4,6 +4,7 @@ import Card from "./Card";
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -11,7 +12,26 @@ function Contact() {
       alert("Invalid! Please fill in all fields.");
       return;
     }
-    alert(`Thank you ${name}!`);
+
+    fetch("http://localhost/cv-api/process.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name, email, message })
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.message) {
+          alert(data.message);
+        } else {
+          alert("Unexpected error occurred.");
+        }
+      })
+      .catch(err => {
+        alert("Something went wrong. Please try again.");
+        console.error(err);
+      });
   }
 
   return (
@@ -54,7 +74,11 @@ function Contact() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <textarea placeholder="Message"></textarea>
+            <textarea
+              placeholder="Message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
             <button type="submit" id="submitBtn">Send</button>
           </form>
         </div>
